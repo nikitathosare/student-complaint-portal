@@ -1,15 +1,19 @@
 📚 Student Complaint Portal
 
 A secure and scalable Student Complaint Management System hosted on AWS using VPC architecture. This project helps students register complaints online, which are stored in a database and can be viewed by the admin.
+
+<br>
  🏗️ Project Architecture
+ 
 
 The system is deployed in a 3-tier VPC setup:
 VPC → Custom VPC with multiple subnets.
 Public Subnet → Hosts the Web Server (serves HTML, CSS files).
 Private Subnet → Hosts the App Server (PHP backend handling logic).
-Database Subnet → AWS RDS MySQL instance (stores complaints securely).
+Database Subnet → AWS RDS MySQL instance (stores complaints securely).</br>
 
 
+<br>
 🔹 File Structure
 
 student-complaint-portal/
@@ -26,7 +30,8 @@ student-complaint-portal/
 │
 └── /database
     └── AWS RDS instance (MySQL)
-
+</br>
+<br>
 ⚡ Features
 
 ✅ Student can submit complaints online.
@@ -35,46 +40,14 @@ student-complaint-portal/
 ✅ Database hosted on AWS RDS (MySQL) for reliability & scalability.
 ✅ Separation of concerns: HTML/CSS → Web Server, PHP → App Server, Data → RDS.
 
-
+</br>
 Content created using ChatGPT
 ChatGPT said:
 
 Got it ✅ You want a professional, attractive README.md file for your Student Complaint Portal project with details about VPC, subnets, web/app servers, RDS, and project cloning instructions.
 Here’s a complete version for you:
 
-📚 Student Complaint Portal
 
-A secure and scalable Student Complaint Management System hosted on AWS using VPC architecture. This project helps students register complaints online, which are stored in a database and can be viewed by the admin.
-
-🏗️ Project Architecture
-
-The system is deployed in a 3-tier VPC setup:
-
-VPC → Custom VPC with multiple subnets.
-
-Public Subnet → Hosts the Web Server (serves HTML, CSS files).
-
-Private Subnet → Hosts the App Server (PHP backend handling logic).
-
-Database Subnet → AWS RDS MySQL instance (stores complaints securely).
-
-🔹 File Structure
-student-complaint-portal/
-│
-├── /web-server
-│   ├── index.html
-│   ├── complaint_form.html
-│   └── styles.css
-│
-├── /app-server
-│   ├── submit_complaint.php
-│   ├── view_complaints.php
-│   └── db_config.php
-│
-└── /database
-    └── AWS RDS instance (MySQL)
-
-⚡ Features
 
 ✅ Student can submit complaints online.
 ✅ Admin can view all submitted complaints.
