@@ -44,33 +44,36 @@ student-complaint-portal/
 Content created using ChatGPT
 ChatGPT said:
 
-Got it ✅ You want a professional, attractive README.md file for your Student Complaint Portal project with details about VPC, subnets, web/app servers, RDS, and project cloning instructions.
-Here’s a complete version for you:
 
 
 
+<br>
 ✅ Student can submit complaints online.
 ✅ Admin can view all submitted complaints.
 ✅ Secure communication using VPC with public & private subnets.
 ✅ Database hosted on AWS RDS (MySQL) for reliability & scalability.
 ✅ Separation of concerns: HTML/CSS → Web Server, PHP → App Server, Data → RDS.
+</br>
 
+<br>
 🚀 Setup & Installation
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/student-complaint-portal.git
 cd student-complaint-portal
 
-
+</br>
+<br>
 2️⃣ Web Server Setup (Public Subnet)
 Deploy the contents of /web-server into your web server (e.g., Apache, Nginx).
 Ensure HTTP/HTTPS access is allowed in the Security Group.
 sudo cp -r web-server/* /var/www/html/
-
-
+</br>
+<br>
 3️⃣ App Server Setup (Private Subnet)
 Deploy PHP files from /app-server into the app server.
 Update db_config.php with your RDS credentials:
-
+</br>
+<br>
 <?php
 $servername = "your-rds-endpoint.amazonaws.com";
 $endpoint = "your-rds-endpoint.amazonaws.com";
@@ -79,7 +82,8 @@ $password   = "yourpassword";
 $dbname     = "complaints_db";
 ?>
 
-
+</br>
+<br>
 4️⃣ Database Setup (AWS RDS)
 
 Launch an RDS MySQL instance in a private subnet.
@@ -96,22 +100,24 @@ CREATE TABLE complaints (
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
-
+</br>
+<br>
 🌐 Deployment
 Web Server → Public Subnet (Accessible via browser).
 App Server → Private Subnet (Handles PHP logic).
 RDS MySQL → Database Subnet (Accessible only by App Server).
+</br>
 
+<br>
 📌 Future Improvements
 Add authentication for Admin.
 Enable Email notifications for complaint submissions.
 Implement API endpoints for mobile app integration.
-
-
+</br>
+<br>
 📝 Author
 
 👤 Nikita Thosare 
 
 linkin Profile:  www.linkedin.com/in/nikita-thosare-b9b8072a5
+</br>
