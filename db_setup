@@ -1,0 +1,62 @@
+create databases mydb;
+use mydb;
+-- Database Setup for Student Complaint System
+-- Run this SQL script in your RDS MySQL database
+
+-- Create the student_complaints table
+CREATE TABLE IF NOT EXISTS student_complaints (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    student_id VARCHAR(50) NOT NULL,
+    enrollment_number VARCHAR(50) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    department VARCHAR(100),
+    semester VARCHAR(20),
+    recipients TEXT,
+    complaint_type VARCHAR(100),
+    subject VARCHAR(500) NOT NULL,
+    message TEXT NOT NULL,
+    priority VARCHAR(20) DEFAULT 'Medium',
+    status VARCHAR(50) DEFAULT 'Under Review',
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    resolution_notes TEXT,
+    resolved_by VARCHAR(255),
+    resolved_date TIMESTAMP NULL
+);
+
+-- Create index for faster queries
+CREATE INDEX idx_student_id ON student_complaints(student_id);
+CREATE INDEX idx_email ON student_complaints(email);
+CREATE INDEX idx_status ON student_complaints(status);
+CREATE INDEX idx_submission_date ON student_complaints(submission_date);
+
+-- Create a view for active complaints
+CREATE VIEW active_complaints AS 
+SELECT 
+    id,
+    name,
+    student_id,
+    enrollment_number,
+    email,
+    department,
+    semester,
+    recipients,
+    complaint_type,
+    subject,
+    message,
+    priority,
+    status,
+    submission_date
+FROM student_complaints 
+WHERE status != 'Resolved'
+ORDER BY submission_date DESC;
+
+-- Sample insert for testing (optional)
+-- INSERT INTO student_complaints (
+--     name, student_id, enrollment_number, email, department, semester,
+--     recipients, complaint_type, subject, message, priority
+-- ) VALUES (
+--     'Test Student', 'ST001', 'EN2024001', 'test@student.edu', 'Computer Science', '3',
+--     'DEAN, CC', 'Academic', 'Test Complaint', 'This is a test complaint message', 'Medium'
+-- );
