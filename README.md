@@ -4,6 +4,11 @@ A secure and scalable Student Complaint Management System hosted on AWS using VP
 
 <br>
  🏗️ Project Architecture
+
+ ![](./images/1756544629903.jpeg/)
+  ![](./images/1756544629571.jpeg)
+   ![](./images/1756544629469.jpeg)
+    ![](./images/1756544628707.jpeg)
  
 
 The system is deployed in a 3-tier VPC setup:
